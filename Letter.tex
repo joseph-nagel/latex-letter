@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GENERAL
+
+% GEOMETRY
+\usepackage{geometry}                                       % [margin=1.0in]
+\geometry{left=2cm,right=2cm,top=2.25cm,bottom=2.75cm}      % [includeheadfoot]
+
+% LANGUAGE
+\usepackage[ngerman,english]{babel}                         % language
+
+% ENCODING
+%\usepackage[utf8]{inputenc}                                % input encoding (does not work with XeLatex and LuaLatex)
+%\usepackage[T1]{fontenc}                                   % output encoding
+
+% FONT
+%\renewcommand*\familydefault{\sfdefault}                           % Computer Modern Sans Serif
+%\usepackage{lmodern} \renewcommand*\familydefault{\sfdefault}      % Latin Modern Sans
+%\usepackage{cmbright}                                              % Computer Modern Bright
+\usepackage[sfdefault]{carlito}                                     % Carlito
+
+% FONTSPEC
+%\usepackage{fontspec}                                      % has to be built with XeLatex or LuaLatex
+%\setmainfont{Latin Modern Roman} \setsansfont{Latin Modern Sans} \renewcommand{\familydefault}{\sfdefault} %\setmainfont{Latin Modern Sans}
+%\setmainfont{calibri.ttf}[
+%    Extension = .ttf,
+%    BoldFont = *b,
+%    ItalicFont = *i,
+%    BoldItalicFont = *z,
+%]
+
+% SYMBOLS
+\usepackage{fontawesome5}                                   % \faIcon{}
+%\usepackage{emoji}                                         % \emoji{}
+
+% FIGURES & COLORS
+\usepackage{graphicx}                                       % graphics package
+\usepackage[svgnames,dvipsnames]{xcolor}                    % advanced version of colors
+
+% STUFF
+\usepackage{microtype}                                      % typographical refinements
+\usepackage{csquotes}                                       % context sensitive quotations
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SETTINGS
+
+% LENGTHS
+\setlength{\parindent}{0pt}                                 % paragraph intendation
+\addtolength{\parskip}{8pt}                                 % paragraph spacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FORMATTING
+
+% DATE
+%\usepackage[en-US]{datetime2}
+%\DTMsetup{useregional=numeric}
+
+% HEADER/FOOTER
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}                                           % no pagenumbers
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}                          % \renewcommand{\headrule}{}
+\renewcommand{\footrulewidth}{0.4pt}                        % \renewcommand{\footrule}{}
+\fancyfoot[L]{\footnotesize{City, \today}}
+\fancyfoot[C]{\footnotesize{Subject}}
+\fancyfoot[R]{\footnotesize{\thepage/\pageref*{LastPage}}}
+
+% HEADER/FOOTER IN GRAY
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\f@nch@head}{\rlap}{\color{lightgray}\rlap}{}{}
+\patchcmd{\f@nch@foot}{\rlap}{\color{lightgray}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\color{lightgray}\hrule}{}{}
+\patchcmd{\footrule}{\hrule}{\color{lightgray}\hrule}{}{}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% REFERENCING
+
+% HYPERREF
+\usepackage{hyperref}
+\hypersetup{
+pdftitle = {Title},
+pdfauthor = {Author},
+pdfsubject = {},
+hidelinks,
+}
+
+\begin{document}
+
+% SENDER
+\begin{flushright}
+    \textbf{Firstname Lastname} \\
+    \color{gray}
+    \faIcon{map-marker-alt}~Some Street 12, 34567 City \\
+    \faIcon[regular]{envelope}~\href{mailto:first.last@email.com}{first.last@email.com} \\
+    \faIcon{mobile-alt}~+49 123 4567 8910
+\end{flushright}
+%\vspace{1mm}
+
+% RECIPIENT
+\begin{flushleft}
+    \textbf{Firstname Lastname} \\
+    \color{gray}
+    Awesome Company GmbH \\
+    Random Street 123, 45678 City
+\end{flushleft}
+%\vspace{1mm}
+
+% LOCATION, DATE, SUBJECT
+\hfill City, \today \\[-1.5ex]
+\rule{\textwidth}{0.8pt}
+\textbf{Subject} \\[2ex]
+
+% MAIN BODY
+Dear recipient,
+\par
+This is my letter to you.
+\par
+Best regards,
+\par
+Firstname Lastname
+
+% SIGN
+%\vspace{1em}
+%\begin{minipage}{0.5\textwidth}
+%    \begin{flushleft}
+%        %\includegraphics[scale=0.45]{Sign.jpg} \\
+%        \vspace{1.1cm}
+%        \rule{4.5cm}{0.4pt}
+%    \end{flushleft}
+%\end{minipage}
+
+%\vspace{1em}
+%\begin{minipage}{0.5\textwidth}
+%    \begin{flushleft}
+%        %\includegraphics[scale=0.45]{Sign.jpg} \\
+%        \vspace{1.1cm}
+%        \rule{4.5cm}{0.4pt}
+%    \end{flushleft}
+%\end{minipage}
+
+%\vfill
+
+\end{document}
