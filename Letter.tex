@@ -47,6 +47,10 @@
 \setlength{\parindent}{0pt}                                 % paragraph intendation
 \addtolength{\parskip}{8pt}                                 % paragraph spacing
 
+% MACROS
+\newcommand*{\lettercity}{City}                             % location
+\newcommand*{\letterdate}{\today}                           % date
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FORMATTING
 
 % DATE
@@ -61,7 +65,7 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}                          % \renewcommand{\headrule}{}
 \renewcommand{\footrulewidth}{0.4pt}                        % \renewcommand{\footrule}{}
-\fancyfoot[L]{\footnotesize{City, \today}}
+\fancyfoot[L]{\footnotesize{\lettercity, \letterdate}}
 \fancyfoot[C]{\footnotesize{Subject}}
 \fancyfoot[R]{\footnotesize{\thepage/\pageref*{LastPage}}}
 
@@ -79,8 +83,8 @@
 % HYPERREF
 \usepackage{hyperref}
 \hypersetup{
-pdftitle = {Title},
-pdfauthor = {Author},
+pdftitle = {PDF title},
+pdfauthor = {PDF author},
 pdfsubject = {},
 hidelinks,
 }
@@ -107,7 +111,7 @@ hidelinks,
 %\vspace{1mm}
 
 % LOCATION, DATE, SUBJECT
-\hfill City, \today \\[-1.5ex]
+\hfill \lettercity, \letterdate \\[-1.5ex]
 \rule{\textwidth}{0.8pt}
 \textbf{Subject} \\[2ex]
 
@@ -120,7 +124,7 @@ Best regards,
 \par
 Firstname Lastname
 
-% SIGN
+% SIGNATURE
 %\vspace{1em}
 %\begin{minipage}{0.5\textwidth}
 %    \begin{flushleft}
